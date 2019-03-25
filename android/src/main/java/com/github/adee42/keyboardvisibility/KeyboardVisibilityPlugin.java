@@ -30,10 +30,13 @@ public class KeyboardVisibilityPlugin implements StreamHandler, Application.Acti
 
 
     KeyboardVisibilityPlugin(Registrar registrar) {
+                
+        mContext = registrar.context().getApplicationContext();
         eventsSink = null;
+        if (registrar.activity() != null) {
         mainView = ((ViewGroup) registrar.activity().findViewById(android.R.id.content)).getChildAt(0);
         mainView.getViewTreeObserver().addOnGlobalLayoutListener(this);
-        mContext = registrar.context().getApplicationContext();
+        }
     }
 
     @Override
