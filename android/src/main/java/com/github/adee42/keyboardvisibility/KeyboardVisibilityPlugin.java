@@ -25,12 +25,14 @@ public class KeyboardVisibilityPlugin implements StreamHandler, Application.Acti
     EventSink eventsSink;
     boolean isVisible;
     View mainView;
+    private Context mContext;
 
 
     KeyboardVisibilityPlugin(Registrar registrar) {
         eventsSink = null;
         mainView = ((ViewGroup) registrar.activity().findViewById(android.R.id.content)).getChildAt(0);
         mainView.getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mContext = registrar.context().getApplicationContext();
     }
 
     @Override
