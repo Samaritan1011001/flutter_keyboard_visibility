@@ -10,6 +10,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.PluginRegistry;
 import io.flutter.plugin.common.PluginRegistry.Registrar;
 
+import android.content.Context;
 import android.app.Activity;
 import android.app.Application;
 import android.graphics.Rect;
